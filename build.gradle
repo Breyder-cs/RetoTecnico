@@ -49,6 +49,7 @@ dependencies {
         useJUnit()
         include('**/IniciarSesionRunner*')
         include('**/CategoriaRunner*')
+        include('**/CorreoRunner*')
 
         reports.junitXml.setEnabled(false)
         reports.html.setEnabled(false)

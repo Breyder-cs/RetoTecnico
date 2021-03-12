@@ -1,4 +1,4 @@
-package runners.Categoria;
+package runners.Correo;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
@@ -7,9 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/agregar_categoria.feature",
+        features = "src/test/resources/features/agregar_correo.feature",
         glue = {"stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class CategoriaRunner {
+public class CorreoRunner {
 }
