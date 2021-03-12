@@ -1,14 +1,17 @@
 package stepdefinitions;
 
 import cucumber.api.java.Before;
+import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
+import models.DatosUsuario;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import tasks.IniciarSesion.IniciarSesion;
 import userinterfaces.IniciarSesion.IniciarSesionPage;
 
-import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
-import static net.serenitybdd.screenplay.actors.OnStage.theActor;
+import java.util.List;
 
+import static net.serenitybdd.screenplay.actors.OnStage.*;
 import static utils.constants.ActorConstants.ACTOR_DEFAULT;
 
 public class Hook {
@@ -21,5 +24,10 @@ public class Hook {
     @Dado("^que el (.*) se encuentre en la pagina de PHPTRAVELS$")
     public void queElUsuarioSeEncuentreEnLaPaginaDePHPTRAVELS(String actor) {
     theActor(actor).attemptsTo(Open.browserOn(new IniciarSesionPage()));
+    }
+
+    @Cuando("^ingrese sus credenciales$")
+    public void ingreseSusCredenciales(List<DatosUsuario> datos) {
+        theActorInTheSpotlight().attemptsTo(IniciarSesion.enElAplicativo(datos));
     }
 }

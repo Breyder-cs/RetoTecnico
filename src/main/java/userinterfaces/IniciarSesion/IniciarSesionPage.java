@@ -6,12 +6,6 @@ import org.openqa.selenium.By;
 
 public class IniciarSesionPage extends PageObject {
 
-    public static Target TXT_gfg = Target.the("Campo de texto para digitar correo")
-            .located(By.id("i0116"));
-
-    public static Target TXT_ehh= Target.the("Elemento para mentener la sesión iniciada")
-            .locatedBy("//div[text()='¿Quiere mantener la sesi\u00F3n iniciada?']");
-
     public static Target TXT_CORREO = Target.the("Campo de texto para digitar correo")
             .located(By.name("email"));
 
